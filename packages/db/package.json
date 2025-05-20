@@ -1,0 +1,36 @@
+{
+  "name": "@beamer/db",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./client": "./src/client.ts",
+    "./schema": "./src/schema.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "git clean -xdf .cache .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "devDependencies": {
+    "@beamer/eslint-config": "workspace:*",
+    "@beamer/prettier-config": "workspace:*",
+    "@beamer/tsconfig": "workspace:*",
+    "@types/pg": "^8.15.2",
+    "drizzle-kit": "^0.31.1",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.43.1",
+    "drizzle-zod": "^0.7.1",
+    "pg": "^8.16.0",
+    "zod": "catalog:"
+  },
+  "prettier": "@beamer/prettier-config"
+}
