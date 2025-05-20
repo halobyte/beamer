@@ -57,6 +57,9 @@ importers:
       '@beamer/db':
         specifier: workspace:*
         version: link:../../packages/db
+      '@beamer/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@clerk/nextjs':
         specifier: ^6.19.4
         version: 6.19.4(next@15.3.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -180,7 +183,7 @@ importers:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react:
-        specifier: 'catalog:'
+        specifier: catalog:react
         version: 19.1.0
       sonner:
         specifier: ^2.0.3
