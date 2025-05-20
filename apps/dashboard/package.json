@@ -11,9 +11,11 @@
     "lint": "eslint",
     "start": "pnpm with-env next start",
     "typecheck": "tsc --noEmit",
-    "with-env": "dotenv -e ../../.gitignore --"
+    "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
+    "@beamer/db": "workspace:*",
+    "@clerk/nextjs": "^6.19.4",
     "@t3-oss/env-nextjs": "^0.13.4",
     "next": "15.3.2",
     "react": "catalog:react",
