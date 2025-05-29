@@ -6,3 +6,7 @@
 @theme inline {
   --font-sans: var(--font-geist-sans);
 }
+
+@utility thin-scrollbar {
+  scrollbar-width: thin;
+}
