@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "@beamer/ui/styles/ui.css";
+
+@source "../../node_modules/@beamer/ui";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+}
+
+@utility thin-scrollbar {
+  scrollbar-width: thin;
+}
