@@ -5,6 +5,7 @@
   "type": "module",
   "exports": {
     "./components/avatar": "./src/components/avatar.tsx",
+    "./components/beamer-icon": "./src/components/beamer-icon.tsx",
     "./components/breadcrumb": "./src/components/breadcrumb.tsx",
     "./components/button": "./src/components/button.tsx",
     "./components/dropdown-menu": "./src/components/dropdown-menu.tsx",

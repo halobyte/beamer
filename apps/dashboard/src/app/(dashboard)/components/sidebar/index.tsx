@@ -1,14 +1,7 @@
 import Link from "next/link";
-import {
-  AudioWaveform,
-  Bug,
-  Globe,
-  HelpCircle,
-  LayoutGrid,
-  Send,
-} from "lucide-react";
+import { Bug, Globe, HelpCircle, LayoutGrid, Send } from "lucide-react";
 
-import { Separator } from "@beamer/ui/components/separator";
+import BeamerIcon from "@beamer/ui/components/beamer-icon";
 import {
   Sidebar as _Sidebar,
   SidebarContent,
@@ -45,8 +38,8 @@ export default function Sidebar() {
     <_Sidebar className="border-none">
       <SidebarContent>
         <SidebarHeader className="mt-[9px] flex h-[60px] flex-row items-center gap-3 border border-transparent px-3.5 *:cursor-default">
-          <span className="inline-flex size-12 items-center justify-center rounded-md bg-sky-700 text-yellow-300">
-            <AudioWaveform />
+          <span className="relative inline-flex size-12 items-center justify-center rounded-md bg-gradient-to-b from-sky-700 via-sky-700 to-sky-800 text-yellow-300">
+            <BeamerIcon className="absolute size-8" />
           </span>
           <div className="flex flex-col">
             <h1 className="text-lg font-extrabold">Beamer</h1>
