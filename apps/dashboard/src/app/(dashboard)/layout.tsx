@@ -13,7 +13,7 @@ export default function DashboardLayout({
         <Sidebar />
         <div className="relative max-h-[calc(100vh-1rem)] w-full overflow-auto rounded-md border bg-white">
           <NavBar />
-          {children}
+          <div className="p-4">{children}</div>
         </div>
       </SidebarProvider>
     </div>
