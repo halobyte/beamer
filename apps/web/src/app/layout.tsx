@@ -4,6 +4,10 @@ import { ClerkProvider } from "@clerk/nextjs";
 
 import "./globals.css";
 
+import { SidebarProvider } from "@beamer/ui/components/sidebar";
+
+import { NavBar, Sidebar } from "./components";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -22,7 +26,13 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body className={`${geistSans.variable} font-sans antialiased`}>
-          {children}
+          <SidebarProvider defaultOpen={false} toggleOnKeypress={false}>
+            <Sidebar />
+            <main className="min-h-screen w-full">
+              <NavBar />
+              {children}
+            </main>
+          </SidebarProvider>
         </body>
       </html>
     </ClerkProvider>
