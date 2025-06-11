@@ -1,8 +1,11 @@
+@import url("https://use.typekit.net/pno2qdi.css");
 @import "tailwindcss";
 @import "@beamer/ui/styles/ui.css";
 
 @source "../../node_modules/@beamer/ui";
 
+
 @theme inline {
   --font-sans: var(--font-geist-sans);
+  --font-mundial: "mundial", sans-serif;
 }
