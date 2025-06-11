@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   CircleDollarSign,
   Puzzle,
@@ -6,9 +5,9 @@ import {
   Trophy,
 } from "lucide-react";
 
-import BeamerLogo from "@beamer/ui/components/beamer-icon";
 import { Separator } from "@beamer/ui/components/separator";
 
+import LogoLink from "../logo-link";
 import DashboardRedirect from "./dashboard-redirect";
 import NavLinks from "./nav-links";
 import { SidebarToggle } from "./sidebar-toggle";
@@ -22,16 +21,13 @@ export const links = [
 
 export default function NavBar() {
   return (
-    <header className="sticky top-0 flex items-center justify-between border border-b bg-white/80 p-3 backdrop:blur-lg">
+    <header className="sticky top-0 flex items-center justify-between border-b bg-white/80 p-3 px-6 backdrop:blur-lg">
       <section className="flex items-center">
         <div className="flex items-center sm:hidden">
           <SidebarToggle />
           <Separator orientation="vertical" className="mx-3 !h-5" />
         </div>
-        <Link href="/" className="flex items-center gap-1.5">
-          <BeamerLogo className="size-5 fill-sky-700" />
-          <span className="font-semibold tracking-tight">Beamer</span>
-        </Link>
+        <LogoLink />
       </section>
 
       <nav className="hidden sm:flex">
