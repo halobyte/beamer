@@ -6,7 +6,7 @@ import "./globals.css";
 
 import { SidebarProvider } from "@beamer/ui/components/sidebar";
 
-import { NavBar, Sidebar } from "./components";
+import { Footer, NavBar, Sidebar } from "./components";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +30,8 @@ export default function RootLayout({
             <Sidebar />
             <main className="min-h-screen w-full">
               <NavBar />
-              {children}
+              <div className="min-h-[calc(100vh-3.875rem)]">{children}</div>
+              <Footer />
             </main>
           </SidebarProvider>
         </body>
