@@ -13,7 +13,6 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarRail,
 } from "@beamer/ui/components/sidebar";
 
 import { links } from "./nav-bar";
@@ -28,7 +27,7 @@ export default function Sidebar() {
           </span>
           <div className="flex flex-col">
             <h1 className="text-lg font-semibold tracking-tight">Beamer</h1>
-            <a className="text-sidebar-foreground/70 text-sm font-medium">
+            <a className="text-sm font-medium text-sidebar-foreground/70">
               Easy email campaigns
             </a>
           </div>
