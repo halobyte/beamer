@@ -3,7 +3,6 @@
 
 @source "../../node_modules/@beamer/ui";
 
-
 @theme inline {
   --font-sans: var(--font-geist-sans);
 }
