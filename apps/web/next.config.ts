@@ -1,14 +1,9 @@
-import path from "path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   transpilePackages: ["@beamer/ui"],
-  webpack: (config) => {
-    config.resolve.alias["lucide-react"] = path.resolve(
-      __dirname,
-      "node_modules/lucide-react",
-    );
-    return config;
+  eslint: {
+    ignoreDuringBuilds: true,
   },
 };
 

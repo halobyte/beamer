@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+
+import { env } from "@/lib/env";
 import {
   ListHeading,
   ListItem,
@@ -6,6 +9,24 @@ import {
   Paragraph,
   UnorderedList,
 } from "../components";
+
+export const metadata: Metadata = {
+  title: "Terms of Use",
+  description: "Read about the acceptable usage of Beamer.",
+  openGraph: {
+    title: "Terms of Use",
+    description: "Read about the acceptable usage of Beamer",
+    url: new URL("/legal/terms-of-use", env.NEXT_PUBLIC_ORIGIN),
+    images: [
+      {
+        alt: "Beamer's Terms of Service",
+        width: 1200,
+        height: 630,
+        url: new URL("/images/og.png", env.NEXT_PUBLIC_ORIGIN),
+      },
+    ],
+  },
+};
 
 export default function TermsOfUsePage() {
   return (
@@ -108,11 +129,11 @@ export default function TermsOfUsePage() {
                   </p>
                   <UnorderedList>
                     <li>
-                      Your spam complaint rate must be lower than 1 in 1,000
-                      emails (0.1%)
+                      Your spam complaint rate must be lower than 1 in 800
+                      emails (0.08%)
                     </li>
                     <li>
-                      Your bounce rate has to be lower than 10% of all emails
+                      Your bounce rate has to be lower than 8% of all emails
                     </li>
                   </UnorderedList>
                 </div>
@@ -144,7 +165,7 @@ export default function TermsOfUsePage() {
               </li>
               <li>
                 Any customer who disputes a credit card payment that is found to
-                be valid will be permanently banned from using the Service.
+                be valid will be permanently banned from using the Service
               </li>
             </UnorderedList>
           </ListItem>

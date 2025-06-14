@@ -1,0 +1,45 @@
+name: Deploy to vercel on merge
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy_web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dkershner6/vercel-set-env-action@v1
+        with:
+          token: ${{ secrets.VERCEL_TOKEN }}
+          projectName: events-app
+          envVariableKeys: CLERK_SECRET_KEY,DATABASE_URL,NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,NEXT_PUBLIC_DASHBOARD_URL,NEXT_PUBLIC_ORIGIN
+        env:
+          CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
+          TARGET_CLERK_SECRET_KEY: preview,development,production
+          TYPE_CLERK_SECRET_KEY: encrypted
+
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          TARGET_DATABASE_URL: preview,development,production
+          TYPE_DATABASE_URL: encrypted
+
+          NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.CLERK_PUBLISHABLE_KEY }}
+          TARGET_NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: preview,development,production
+          TYPE_NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: encrypted
+
+          NEXT_PUBLIC_DASHBOARD_URL: ${{ secrets.DASHBOARD_ORIGIN }}
+          TARGET_NEXT_PUBLIC_DASHBOARD_URL: preview,development,production
+          TYPE_NEXT_PUBLIC_DASHBOARD_URL: encrypted
+
+          NEXT_PUBLIC_ORIGIN: ${{ secrets.WEB_ORIGIN }}
+          TARGET_NEXT_PUBLIC_ORIGIN: preview,development,production
+          TYPE_NEXT_PUBLIC_ORIGIN: encrypted
+
+      - uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-args: '--prod'
+          vercel-org-id: ${{ secrets.ORG_ID }}
+          vercel-project-id: ${{ secrets.PROJECT_ID }}
+          working-directory: apps/web

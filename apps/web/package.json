@@ -17,6 +17,7 @@
     "@beamer/ui": "workspace:*",
     "@clerk/nextjs": "^6.19.4",
     "@t3-oss/env-nextjs": "^0.13.4",
+    "lucide-react": "catalog:",
     "next": "15.3.2",
     "react": "catalog:react",
     "react-dom": "catalog:react",

@@ -90,7 +90,7 @@ function WhyBeamerSection() {
         </p>
       </div>
 
-      <div className="flex w-10/12 flex-col items-center justify-center gap-10 px-4 sm:px-6 lg:w-9/12 lg:gap-20 lg:px-10 xl:flex-row xl:items-baseline">
+      <div className="flex w-full flex-col items-center justify-center gap-10 px-4 sm:w-11/12 sm:px-6 lg:w-9/12 lg:gap-20 lg:px-10 xl:flex-row xl:items-baseline">
         <div className="flex w-full shrink-0 flex-col gap-8 *:flex *:w-full *:gap-3 lg:items-center xl:w-[500px]">
           <div>
             <div className="mt-1 flex size-10 shrink-0 items-center justify-center rounded-md bg-sky-300 text-sky-700">

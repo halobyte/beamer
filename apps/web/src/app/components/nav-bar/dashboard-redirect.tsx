@@ -1,6 +1,5 @@
 "use client";
 
-import path from "node:path";
 import Link from "next/link";
 import { useUser } from "@clerk/nextjs";
 import { CircleArrowRight, LogIn } from "lucide-react";

@@ -52,7 +52,7 @@ const plans = [
 
 export default function PricingCards() {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 px-4">
       <div className="mx-auto grid w-full grid-cols-1 justify-center gap-10 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
         {plans.map((plan, i) => (
           <Card key={i} className="justify-between">

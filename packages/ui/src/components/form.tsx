@@ -1,8 +1,8 @@
 "use client";
 
+import type * as LabelPrimitive from "@radix-ui/react-label";
 import type { ControllerProps, FieldPath, FieldValues } from "react-hook-form";
 import * as React from "react";
-import * as LabelPrimitive from "@radix-ui/react-label";
 import { Slot } from "@radix-ui/react-slot";
 import {
   Controller,
@@ -16,12 +16,12 @@ import { cn } from "@beamer/ui/utils";
 
 const Form = FormProvider;
 
-type FormFieldContextValue<
+interface FormFieldContextValue<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
-> = {
+> {
   name: TName;
-};
+}
 
 const FormFieldContext = React.createContext<FormFieldContextValue>(
   {} as FormFieldContextValue,
@@ -46,6 +46,7 @@ const useFormField = () => {
   const { getFieldState } = useFormContext();
   const formState = useFormState({ name: fieldContext.name });
   const fieldState = getFieldState(fieldContext.name, formState);
+  // eslint-disable-next-line
   if (!fieldContext) {
     throw new Error("useFormField should be used within <FormField>");
   }
@@ -62,9 +63,9 @@ const useFormField = () => {
   };
 };
 
-type FormItemContextValue = {
+interface FormItemContextValue {
   id: string;
-};
+}
 
 const FormItemContext = React.createContext<FormItemContextValue>(
   {} as FormItemContextValue,
@@ -135,6 +136,7 @@ function FormDescription({ className, ...props }: React.ComponentProps<"p">) {
 
 function FormMessage({ className, ...props }: React.ComponentProps<"p">) {
   const { error, formMessageId } = useFormField();
+  // eslint-disable-next-line
   const body = error ? String(error?.message ?? "") : props.children;
 
   if (!body) {

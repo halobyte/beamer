@@ -21,5 +21,8 @@
     "turbo": "^2.3.3",
     "typescript": "catalog:"
   },
-  "prettier": "@beamer/prettier-config"
+  "prettier": "@beamer/prettier-config",
+  "dependencies": {
+    "vercel": "^43.1.0"
+  }
 }

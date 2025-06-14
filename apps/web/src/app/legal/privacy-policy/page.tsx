@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+
+import { env } from "@/lib/env";
 import {
   ListHeading,
   ListItem,
@@ -5,6 +8,25 @@ import {
   OrderedList,
   UnorderedList,
 } from "../components";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Beamer puts your privacy first. Read about we handle your data.",
+  openGraph: {
+    title: "Terms of Use",
+    description: "Read about the acceptable usage of Beamer",
+    url: new URL("/legal/terms-of-use", env.NEXT_PUBLIC_ORIGIN),
+    images: [
+      {
+        alt: "Beamer's Privacy Policy",
+        width: 1200,
+        height: 630,
+        url: new URL("/images/og.png", env.NEXT_PUBLIC_ORIGIN),
+      },
+    ],
+  },
+};
 
 export default function PrivacyPage() {
   return (
