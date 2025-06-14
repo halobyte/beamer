@@ -1,7 +1,7 @@
 "use client";
 
 import path from "path";
-import React from "react";
+import React, { useEffect, useMemo } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { PanelTop } from "lucide-react";
@@ -90,11 +90,25 @@ function _BreadcrumbList({ pathnameSplit }: { pathnameSplit: string[] }) {
   );
 }
 
+const HEADER_SELECTOR = "header[data-id=app-header]" as const;
+
 export function Breadcrumbs() {
   const pathname = usePathname();
-  if (!pathname) return <span></span>;
+  const pathnameSplit = useMemo(
+    () => (pathname ? pathname.split("/").filter((p) => p.length > 0) : []),
+    [pathname],
+  );
 
-  const pathnameSplit = pathname.split("/").filter((p) => p.length > 0);
+  useEffect(() => {
+    if (pathnameSplit.length >= 2)
+      document.querySelector(HEADER_SELECTOR)?.classList.add("mb-[30px]");
+
+    return () => {
+      document.querySelector(HEADER_SELECTOR)?.classList.remove("mb-[30px]");
+    };
+  }, [pathnameSplit]);
+
+  if (!pathname) return <span></span>;
 
   if (pathnameSplit.length < 2) return null;
 

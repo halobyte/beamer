@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { Bug, Globe, HelpCircle, LayoutGrid, Send } from "lucide-react";
+import { Bug, HelpCircle } from "lucide-react";
 
-import BeamerIcon from "@beamer/ui/components/beamer-icon";
 import {
   Sidebar as _Sidebar,
   SidebarContent,
@@ -9,55 +8,27 @@ import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
-  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@beamer/ui/components/sidebar";
 
-const items = [
-  {
-    title: "Overview",
-    url: "/",
-    icon: LayoutGrid,
-  },
-  {
-    title: "Identities",
-    url: "/identities",
-    icon: Globe,
-  },
-  {
-    title: "Campaigns",
-    url: "/campaigns",
-    icon: Send,
-  },
-];
+import { links } from "./nav-bar";
 
 export default function Sidebar() {
   return (
-    <_Sidebar className="border-none">
+    <_Sidebar className="mt-[61px] h-[calc(100vh-61px)]">
       <SidebarContent>
-        <SidebarHeader className="mt-[9px] flex h-[60px] flex-row items-center gap-3 border border-transparent px-3.5 *:cursor-default">
-          <span className="relative inline-flex size-12 items-center justify-center rounded-md bg-gradient-to-b from-sky-700 via-sky-700 to-sky-800 text-yellow-300">
-            <BeamerIcon className="absolute size-8" />
-          </span>
-          <div className="flex flex-col">
-            <h1 className="text-lg font-extrabold">Beamer</h1>
-            <a className="text-sidebar-foreground/70 text-sm font-medium">
-              Email campaigns
-            </a>
-          </div>
-        </SidebarHeader>
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
-          <SidebarGroupContent>
+          <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+          <SidebarGroupContent className="top-10">
             <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
+              {links.map((link) => (
+                <SidebarMenuItem key={link.title}>
                   <SidebarMenuButton asChild>
-                    <Link href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
+                    <Link href={link.href}>
+                      <link.icon />
+                      <span>{link.title}</span>
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

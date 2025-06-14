@@ -23,7 +23,7 @@ function NavSection({
 
 export default function NavBar() {
   return (
-    <header className="sticky top-0 flex items-center">
+    <header data-id="app-header" className="sticky top-0 flex items-center">
       <div className="relative w-full">
         <div className="z-10 flex w-full flex-nowrap items-center justify-between bg-white p-3 px-2 shadow-sm sm:px-4">
           <NavSection className="flex-1 overflow-hidden">
