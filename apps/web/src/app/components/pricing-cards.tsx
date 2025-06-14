@@ -16,7 +16,7 @@ const plans = [
     price: 19.99,
     description: "Perfect for individuals and startups.",
     features: [
-      "75,000 emails",
+      "60,000 emails",
       "Analytics and delivery optimisation",
       "Limited to one active campaign at a time",
     ],
@@ -26,7 +26,7 @@ const plans = [
     price: 79.99,
     description: "Ideal for growing businesses.",
     features: [
-      "150,000 emails",
+      "175,000 emails",
       "Analytics and delivery optimisation",
       "Limited to 10 active campaigns at a time",
       "Access to AI Editor",
