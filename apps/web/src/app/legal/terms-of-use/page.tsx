@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+
+import { env } from "@/lib/env";
 import {
   ListHeading,
   ListItem,
@@ -6,6 +9,24 @@ import {
   Paragraph,
   UnorderedList,
 } from "../components";
+
+export const metadata: Metadata = {
+  title: "Terms of Use",
+  description: "Read about the acceptable usage of Beamer.",
+  openGraph: {
+    title: "Terms of Use",
+    description: "Read about the acceptable usage of Beamer",
+    url: new URL("/legal/terms-of-use", env.NEXT_PUBLIC_ORIGIN),
+    images: [
+      {
+        alt: "Beamer's Terms of Service",
+        width: 1200,
+        height: 630,
+        url: new URL("/images/og.png", env.NEXT_PUBLIC_ORIGIN),
+      },
+    ],
+  },
+};
 
 export default function TermsOfUsePage() {
   return (
