@@ -12,7 +12,7 @@ jobs:
       - uses: dkershner6/vercel-set-env-action@v1
         with:
           token: ${{ secrets.VERCEL_TOKEN }}
-          projectName: events-app
+          projectName: beamer
           envVariableKeys: CLERK_SECRET_KEY,DATABASE_URL,NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,NEXT_PUBLIC_DASHBOARD_URL,NEXT_PUBLIC_ORIGIN
         env:
           CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
