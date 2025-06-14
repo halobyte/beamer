@@ -16,7 +16,7 @@ const qnas = [
   },
   {
     q: "Is there a limit to how many emails I can send?",
-    a: "Email sending limits depend on your subscription tier and SES usage quotas. Beamer transparently communicates your available quota and helps you stay within limits. For high-volume needs, we help you scale easily.",
+    a: "Email sending limits depend on your subscription tier. Beamer transparently communicates your available quota and helps you stay within limits. For high-volume needs, we help you scale easily.",
   },
   {
     q: "Can I track email opens and clicks?",
@@ -41,7 +41,9 @@ export default function FAQAccordions() {
     >
       {qnas.map((qna, i) => (
         <AccordionItem key={i} value={`${i}`}>
-          <AccordionTrigger className="text-base">{qna.q}</AccordionTrigger>
+          <AccordionTrigger className="cursor-pointer text-base">
+            {qna.q}
+          </AccordionTrigger>
           <AccordionContent>{qna.a}</AccordionContent>
         </AccordionItem>
       ))}
